@@ -36,7 +36,7 @@ public class AuthorController {
         this.modelMapper = modelMapper;
     }
 
-    @Operation(summary = "Get list of all authors")
+    @Operation(summary = "Get set of all authors")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Set<AuthorDto> getAllAuthors() {
         List<AuthorEntity> authors = authorService.findAll();

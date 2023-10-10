@@ -26,4 +26,5 @@ public class RequestBook {
     private String binding;
     private String description;
     private Set<UUID> authorsId;
+    private Set<UUID> collectionsId;
 }

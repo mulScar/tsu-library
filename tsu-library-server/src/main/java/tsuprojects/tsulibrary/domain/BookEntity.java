@@ -71,16 +71,19 @@ public class BookEntity {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(name = "book_author",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private Set<AuthorEntity> authors;
+    private Set<AuthorEntity> authors = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "book_collection",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "collection_id"))
+    private Set<CollectionEntity> collections = new HashSet<>();
 
     public void addAuthor(AuthorEntity author) {
-        if (authors == null) {
-            authors = new HashSet<>();
-        }
         authors.add(author);
     }
 
@@ -91,8 +94,20 @@ public class BookEntity {
     }
 
     public void removeAuthor(AuthorEntity author) {
-        if (authors != null) {
-            authors.remove(author);
+        authors.remove(author);
+    }
+
+    public void addCollection(CollectionEntity collection) {
+        collections.add(collection);
+    }
+
+    public void addCollections(List<CollectionEntity> collections) {
+        for (CollectionEntity collection : collections) {
+            addCollection(collection);
         }
+    }
+
+    public void removeCollection(CollectionEntity collection) {
+        collections.remove(collection);
     }
 }

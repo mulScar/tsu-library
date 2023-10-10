@@ -11,6 +11,8 @@ public interface BookService {
 
     Page<BookEntity> findAll(Pageable pageable);
 
+    Page<BookEntity> findAllByCollectionId(UUID collectionId, Pageable pageable);
+
     BookEntity findById(UUID id);
 
     BookEntity create(RequestBook requestBook);

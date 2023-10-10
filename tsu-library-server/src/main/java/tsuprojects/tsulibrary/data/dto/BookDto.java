@@ -27,4 +27,5 @@ public class BookDto {
     private String binding;
     private String description;
     private Set<AuthorDto> authors;
+    private Set<CollectionDto> collections;
 }

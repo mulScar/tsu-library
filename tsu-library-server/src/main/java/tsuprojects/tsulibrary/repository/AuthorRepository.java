@@ -14,6 +14,6 @@ public interface AuthorRepository extends JpaRepository<AuthorEntity, UUID> {
     @Query("SELECT CASE when count(author) > 0 then TRUE else FALSE end " +
             "FROM " + AuthorEntity.ENTITY_NAME + " as author " +
             "WHERE author.firstName = :firstName " +
-            "AND author.lastName = :lastName ")
+            "AND author.lastName = :lastName")
     boolean existsByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName);
 }

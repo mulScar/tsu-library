@@ -34,7 +34,7 @@ public class BookController {
         this.modelMapper = modelMapper;
     }
 
-    @Operation(summary = "Get list of all books")
+    @Operation(summary = "Get set of all books")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Page<BookDto> getAllBooks(@RequestParam("page") Integer page, @RequestParam("limit") Integer limit) {
         Page<BookEntity> books = bookService.findAll(PageRequest.of(page, limit));
