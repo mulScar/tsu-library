@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/tsu_library_db}
+    username: tsu_library_admin
+    password: 4h7TGwPRwgzE2sPjhDks4hrT
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
