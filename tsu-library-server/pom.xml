@@ -12,7 +12,7 @@
 
 	<groupId>tsu-projects</groupId>
 	<artifactId>tsu-library-server</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>tsu-library-server</name>
 	<description>TSU Library Server</description>
 
