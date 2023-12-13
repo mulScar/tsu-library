@@ -1,7 +1,16 @@
 version: '3'
 services:
+  db:
+    image: postgres:14.5-alpine
+    container_name: tsu-library-db
+    environment:
+      - POSTGRES_USER=tsu_library_admin
+      - POSTGRES_PASSWORD=4h7TGwPRwgzE2sPjhDks4hrT
+      - POSTGRES_DB=tsu_library_db
   app:
-    image: 'mulscar/tsu-library-server:0.0.1'
-    container_name: 'tsu-library-server'
+    image: mulscar/tsu-library-server:0.0.2
+    container_name: tsu-library-server
     ports:
-      - '8080:8080'
+      - "8080:8080"
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/tsu_library_db
