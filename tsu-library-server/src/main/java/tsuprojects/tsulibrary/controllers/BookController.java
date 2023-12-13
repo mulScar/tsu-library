@@ -16,6 +16,7 @@ import tsuprojects.tsulibrary.service.BookService;
 
 import java.util.UUID;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/books")
 @Tag(name = "Book Controller", description = "Controller for managing books")
